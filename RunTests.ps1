@@ -4,7 +4,7 @@ Push-Location $Here
 
 ./Tests/Utils/DisplayConfigurationInfo.ps1
 ./Tests/Utils/ImportModule.ps1
-
+./Tests/Utils/ImportPester.ps1
 
 $TestFiles = @(
     './Tests/EC.IntroModule.Tests.ps1',
