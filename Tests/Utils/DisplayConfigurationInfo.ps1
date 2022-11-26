@@ -9,5 +9,5 @@ if ($Env:APPVEYOR) {
     Get-Module | Out-Host
     Get-Module -ListAvailable PowerShellGet,PackageManagement | Out-Host
     Get-PackageProvider | Out-Host
-    Get-PackageProvider -ListAvailable  | Out-Host    
+    Get-PackageProvider -ListAvailable  | Out-Host
 }
