@@ -1,3 +1,5 @@
+$CommandName = 'Get-Cube'
+
 BeforeAll {
     $CommandName = 'Get-Cube'
     $ParameterNames = @('Number')

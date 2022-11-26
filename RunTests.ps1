@@ -12,6 +12,6 @@ $TestFiles = @(
     './Tests/Get-Cube.Tests.ps1'
 )
 
-Invoke-Pester -Path $TestFiles  -Output Detailed
+Invoke-Pester -Path $TestFiles -OutputFormat NUnitXML -OutputFile ./TestResults.xml
 
 Pop-Location
