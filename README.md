@@ -45,3 +45,4 @@ For list of examples, run
 Get-Help Get-Square -Examples
 Get-Help Get-Cube -Examples
 ```
+
