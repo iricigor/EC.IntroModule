@@ -21,6 +21,4 @@ function Get-Square {
         Write-Verbose "end $($Number.Count) elements"
     }
 
-    }
-
-    Set-Alias square Get-Square
+}

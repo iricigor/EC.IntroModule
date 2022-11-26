@@ -54,12 +54,6 @@ Describe 'Proper Declarations' {
             $_.Parameters.FakeParam | Should -Be $null
         }
     }
-
-    It 'Checks for Aliases' {
-        Get-Command -Module $ModuleName | % {
-            Get-Alias -Definition ($_.Name) | Should -Not -Be $null
-        }
-    }
 }
 
 #

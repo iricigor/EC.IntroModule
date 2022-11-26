@@ -12,6 +12,15 @@ $TestFiles = @(
     './Tests/Get-Cube.Tests.ps1'
 )
 
-Invoke-Pester -Path $TestFiles -OutputFormat NUnitXML -OutputFile ./TestResults.xml
+$config = [PesterConfiguration]::Default
+$config.Run.Path = $TestFiles
+$config.TestResult.Enabled = $true
+$config.TestResult.OutputPath = './TestResults.xml'
+$config.CodeCoverage.Enabled = $true
+$config.CodeCoverage.OutputPath = './CodeCoverage.xml'
+$config.codecoverage.OutputFormat = 'JaCoCo'
+$config.CodeCoverage.Path = './Public/*.ps1'
+
+Invoke-Pester -Configuration $config
 
 Pop-Location

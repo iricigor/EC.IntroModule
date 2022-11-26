@@ -21,6 +21,4 @@ function Get-Cube {
         Write-Verbose "end $($Number.Count) elements"
     }
 
-    }
-
-    Set-Alias cube Get-Cube
+}
