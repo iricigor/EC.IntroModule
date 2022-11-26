@@ -3,7 +3,7 @@
 #
 
 TODO:
-if ($Env:APPVEYOR) {
+if ($Env:APPVEYOR -or $Env:TF_BUILD) {
     Write-Host "Checking environment details`n"
     $PSVersionTable | Out-Host
     Get-Module | Out-Host

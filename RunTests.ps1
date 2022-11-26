@@ -1,3 +1,7 @@
+.\Tests\Utils\DisplayConfigurationInfo.ps1
+.\Tests\Utils\ImportModule.ps1
+
+
 $TestFiles = @(
     '.\Tests\EC.IntroModule.Tests.ps1',
     '.\Tests\Get-Square.Tests.ps1',
