@@ -1,6 +1,7 @@
 # EC.IntroModule
 
 TODO:
+
 [![Build status](https://ci.appveyor.com/api/projects/status/tlxsb0j6v9jdhq0s?svg=true)](https://ci.appveyor.com/project/iricigor/se-intromodule)
 [![latest version](https://img.shields.io/powershellgallery/v/EC.IntroModule.svg?label=latest+version)](https://www.powershellgallery.com/packages/EC.IntroModule)
 [![downloads](https://img.shields.io/powershellgallery/dt/EC.IntroModule.svg?label=downloads)](https://www.powershellgallery.com/pagitckages/EC.IntroModule)
@@ -12,7 +13,7 @@ This is PowerShell introduction module. It explains advanced functions and CI/CD
 ## How to install
 
 You can install this module from PowerShell Gallery (preferred way) or by cloning GitHub repository.
-TODO: Module is tested both on Windows PowerShell and PowerShell Core.
+Module is tested both on Windows PowerShell and PowerShell Core and on Windows, Linux and MacOS.
 
 ### From PSGallery
 
