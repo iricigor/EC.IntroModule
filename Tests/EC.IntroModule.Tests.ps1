@@ -67,13 +67,22 @@ Describe 'Proper Declarations' {
 
 Describe 'Proper Documentation' {
 
-	It 'Updates documentation and does git diff' {
+    It 'Runs in proper folder' {
+        $Root = Split-Path -Parent $PSScriptRoot
+        Push-Location $Root
+        Get-Item 'Docs' | Should -Not -Be $null -Because "cannot run in $Root"
+        Pop-Location
+    }
+
+    It 'Has PlatyPS installed' {
         if (!(Get-Module platyPS -List -ea 0)) {Install-Module platyPS -Force -Scope CurrentUser}
 		Import-Module platyPS
+    }
+
+	It 'Updates documentation and does git diff' {
 		# update documentation
-        $Module = (Get-Module $ModuleName).Path
-        $Root = Split-Path -Parent $Module
-		Push-Location -Path $Root
+        $Root = Split-Path -Parent $PSScriptRoot
+        Push-Location $Root
         Update-MarkdownHelp -Path ./Docs
         New-ExternalHelp -Path ./Docs -OutputPath ./en-US -Force
         $diff = git diff ./Docs ./en-US
