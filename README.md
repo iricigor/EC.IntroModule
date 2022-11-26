@@ -25,7 +25,7 @@ Find-Module EC.IntroModule -Repository PSGallery | Install-Module -Scope Current
 
 ```PowerShell
 git clone https://github.com/iricigor/EC.IntroModule.git      # Clone this repository
-Import-Module .\EC.IntroModule\EC.IntroModule.psd1 -Force  # Import module
+Import-Module ./EC.IntroModule/EC.IntroModule.psd1 -Force  # Import module
 ```
 
 ## How to use
