@@ -85,7 +85,6 @@ Describe 'Proper Documentation' {
         Push-Location $Root
         Update-MarkdownHelp -Path ./Docs
         New-ExternalHelp -Path ./Docs -OutputPath ./en-US -Force
-        git config core.whitespace cr-at-eol
         $diff = git diff ./Docs ./en-US
         Pop-Location
 		$diff | Should -Be $null
