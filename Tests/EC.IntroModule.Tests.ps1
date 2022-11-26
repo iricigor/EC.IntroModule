@@ -1,8 +1,13 @@
 #
 # This is a PowerShell Unit Test file.
-# You need a unit test framework such as Pester to run PowerShell Unit tests. 
+# You need a unit test framework such as Pester to run PowerShell Unit tests.
 # You can download Pester from http://go.microsoft.com/fwlink/?LinkID=534084
 #
+
+BeforeAll {
+    $ModuleName = 'EC.IntroModule'
+}
+
 
 #
 # Fake test
@@ -11,7 +16,7 @@
 
 Describe 'Fake Test' {
     It "Runs Fake Test" {
-        $true | Should Be $true
+        $true | Should -Be $true
     }
 }
 
@@ -19,7 +24,7 @@ Describe 'Fake Test' {
 # Module Should be loaded
 #
 
-$ModuleName = 'EC.IntroModule'
+
 Describe "Test if module is loaded" {
     It "Module should be loaded" {
         Get-Module $ModuleName -ea 0 | Should -Not -Be $null

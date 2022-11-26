@@ -17,7 +17,7 @@ $LocalVersion = $Manifest.Version.ToString()
 
 try {
     $RemoteModule = Find-Module $ModuleName -Repository PSGallery
-    $RemoteVersion = $RemoteModule.Version.ToString()    
+    $RemoteVersion = $RemoteModule.Version.ToString()
 } catch {
     $RemoteVersion = 'not found'
 }

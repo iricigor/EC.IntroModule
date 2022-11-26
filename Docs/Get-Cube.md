@@ -13,7 +13,7 @@ SE-UP example commandlet
 ## SYNTAX
 
 ```
-Get-Cube [-Number] <Decimal[]> [<CommonParameters>]
+Get-Cube [-Number] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,19 +41,19 @@ Returns cubes of numbers passed via pipeline
 Input number(s)
 
 ```yaml
-Type: Decimal[]
+Type: Int32[]
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
