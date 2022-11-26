@@ -71,7 +71,9 @@ Describe 'Proper Documentation' {
         if (!(Get-Module platyPS -List -ea 0)) {Install-Module platyPS -Force -Scope CurrentUser}
 		Import-Module platyPS
 		# update documentation
-		Push-Location -Path $root
+        $Module = (Get-Module $ModuleName).Path
+        $Root = Split-Path -Parent $Module
+		Push-Location -Path $Root
         Update-MarkdownHelp -Path ./Docs
         New-ExternalHelp -Path ./Docs -OutputPath ./en-US -Force
         $diff = git diff ./Docs ./en-US
