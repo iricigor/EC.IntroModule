@@ -1,3 +1,10 @@
+BeforeAll {
+    $CommandName = 'Get-Cube'
+    $ParameterNames = @('Number')
+    $CmdDef = Get-Command -Name $CommandName -Module $ModuleName -ea 0
+    $CmdFake = Get-Command -Name 'FakeCommandName' -Module $ModuleName -ea 0
+}
+
 #
 # Fake test
 #
@@ -12,13 +19,7 @@ Describe "Fake-Test" {
 # Check definition
 #
 
-$CommandName = 'Get-Cube'
-$ParameterNames = @('Number')
-
 Describe "Function $CommandName Definition" {
-
-    $CmdDef = Get-Command -Name $CommandName -Module $ModuleName -ea 0
-    $CmdFake = Get-Command -Name 'FakeCommandName' -Module $ModuleName -ea 0
 
     It "Command should exist" {
         $CmdDef | Should -Not -Be $null
@@ -46,9 +47,4 @@ Describe "Proper $CommandName Functionality" {
     It 'Accepts pipeline input' {
         3,4 | Get-Cube | Should -Be @(27,64)
     }
-
-    It 'Accepts decimal numbers' {
-        Get-Cube  2.5 | Should -Be 15.625
-    }
-
 }

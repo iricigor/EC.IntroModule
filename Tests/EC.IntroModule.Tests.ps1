@@ -25,9 +25,12 @@ Describe 'Fake Test' {
 #
 
 
-Describe "Test if module is loaded" {
+Describe "Test if module $ModuleName is loaded" {
     It "Module should be loaded" {
         Get-Module $ModuleName -ea 0 | Should -Not -Be $null
+    }
+    It "Fake Module should not be loaded" {
+        Get-Module 'FakeModule' -ea 0 | Should -Be $null
     }
 }
 
@@ -39,7 +42,7 @@ Describe "Test if module is loaded" {
 Describe 'Proper Declarations' {
     It 'Checks for existence of functions' {
         (Get-Command -Module $ModuleName).Count | Should -Be 2
-        Get-Command Get-Cube -ea 0 | Should -Not -Be $Null
+        Get-Command Get-Cube -ea 0   | Should -Not -Be $Null
         Get-Command Get-Square -ea 0 | Should -Not -Be $Null
         Get-Command Get-Fourth -ea 0 | Should -Be $Null
     }
@@ -67,7 +70,7 @@ Describe 'Proper Documentation' {
 	It 'Updates documentation and does git diff' {
         if (!(Get-Module platyPS -List -ea 0)) {Install-Module platyPS -Force -Scope CurrentUser}
 		Import-Module platyPS
-		# update documentation 
+		# update documentation
 		Push-Location -Path $root
         Update-MarkdownHelp -Path .\Docs
         New-ExternalHelp -Path .\Docs -OutputPath .\en-US -Force

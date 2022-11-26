@@ -1,3 +1,10 @@
+BeforeAll {
+    $CommandName = 'Get-Square'
+    $ParameterNames = @('Number')
+    $CmdDef = Get-Command -Name $CommandName -Module $ModuleName -ea 0
+    $CmdFake = Get-Command -Name 'FakeCommandName' -Module $ModuleName -ea 0
+}
+
 #
 # Fake test
 #
@@ -12,13 +19,8 @@ Describe "Fake-Test" {
 # Check definition
 #
 
-$CommandName = 'Get-Square'
-$ParameterNames = @('Number')
 
 Describe "Function $CommandName Definition" {
-
-    $CmdDef = Get-Command -Name $CommandName -Module $ModuleName -ea 0
-    $CmdFake = Get-Command -Name 'FakeCommandName' -Module $ModuleName -ea 0
 
     It "Command should exist" {
         $CmdDef | Should -Not -Be $null
