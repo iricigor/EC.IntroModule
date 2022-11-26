@@ -2,7 +2,6 @@
 # Display troubleshooting variables
 #
 
-TODO:
 if ($Env:APPVEYOR -or $Env:TF_BUILD) {
     Write-Host "Checking environment details`n"
     $PSVersionTable | Out-Host
