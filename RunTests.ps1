@@ -1,3 +1,7 @@
+$Here = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+Push-Location $Here
+
 ./Tests/Utils/DisplayConfigurationInfo.ps1
 ./Tests/Utils/ImportModule.ps1
 
@@ -9,3 +13,5 @@ $TestFiles = @(
 )
 
 Invoke-Pester -Path $TestFiles  -Output Detailed
+
+Pop-Location
