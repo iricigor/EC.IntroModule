@@ -1,10 +1,13 @@
 # EC.IntroModule
 
-TODO:
+[![Build Status](https://dev.azure.com/iiric/PS1/_apis/build/status/EC%20Intro%20Module%20Tests?branchName=master)](https://dev.azure.com/iiric/PS1/_build/latest?definitionId=47&branchName=master)
+[![Tests](https://img.shields.io/azure-devops/tests/iiric/PS1/47?compact_message)](https://dev.azure.com/iiric/PS1/_build/latest?definitionId=47&branchName=master)
+[![Code Coverage](https://img.shields.io/azure-devops/coverage/iiric/PS1/47)](https://dev.azure.com/iiric/PS1/_build/latest?definitionId=47&branchName=master)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/tlxsb0j6v9jdhq0s?svg=true)](https://ci.appveyor.com/project/iricigor/se-intromodule)
 [![latest version](https://img.shields.io/powershellgallery/v/EC.IntroModule.svg?label=latest+version)](https://www.powershellgallery.com/packages/EC.IntroModule)
 [![downloads](https://img.shields.io/powershellgallery/dt/EC.IntroModule.svg?label=downloads)](https://www.powershellgallery.com/pagitckages/EC.IntroModule)
+[![platforms](https://img.shields.io/powershellgallery/p/EC.IntroModule)](https://www.powershellgallery.com/pagitckages/EC.IntroModule)
+
 
 ## Introduction
 
@@ -24,8 +27,8 @@ Find-Module EC.IntroModule -Repository PSGallery | Install-Module -Scope Current
 ### From GitHub
 
 ```PowerShell
-git clone https://github.com/iricigor/EC.IntroModule.git      # Clone this repository
-Import-Module ./EC.IntroModule/EC.IntroModule.psd1 -Force  # Import module
+git clone https://github.com/iricigor/EC.IntroModule.git    # Clone this repository
+Import-Module ./EC.IntroModule/EC.IntroModule.psd1 -Force   # Import module
 ```
 
 ## How to use

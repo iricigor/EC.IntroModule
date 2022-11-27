@@ -37,7 +37,7 @@ if (!$Env:MyPSGalleryAPIKey) {
     Write-Warning 'MyPSGalleryAPIKey environment variable is not set. Publishing is not possible.'
     exit
 } else {
-    Write-Output "Publishing version $LocalVersion to PSGallery, currently published version is $RemoteVersion"
+    Write-Output "Publishing version $LocalVersion to PSGallery, currently published version is $RemoteVersion..."
     try {
         Publish-Module -Path . -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
         Write-Output "Module successfully published!"

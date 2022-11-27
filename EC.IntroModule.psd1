@@ -15,7 +15,7 @@ RootModule = './EC.IntroModule.psm1'
 ModuleVersion = '1.0.0'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Desktop','Core')
 
 # ID used to uniquely identify this module
 GUID = 'faf86395-1019-4428-865a-32d871a60c8d'
@@ -120,4 +120,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
