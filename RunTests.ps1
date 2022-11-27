@@ -18,7 +18,7 @@ $config.TestResult.Enabled = $true
 $config.TestResult.OutputPath = './TestResults.xml'
 $config.CodeCoverage.Enabled = $true
 $config.CodeCoverage.OutputPath = './CodeCoverage.xml'
-$config.codecoverage.OutputFormat = 'JaCoCo'
+$config.codecoverage.OutputFormat = 'CoverageGutters'
 $config.CodeCoverage.Path = './Public/*.ps1'
 
 Invoke-Pester -Configuration $config
