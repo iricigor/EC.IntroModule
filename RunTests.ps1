@@ -14,12 +14,16 @@ $TestFiles = @(
 
 $config = [PesterConfiguration]::Default
 $config.Run.Path = $TestFiles
-$config.TestResult.Enabled = $true
-$config.TestResult.OutputPath = './TestResults.xml'
-$config.CodeCoverage.Enabled = $true
-$config.CodeCoverage.OutputPath = './CodeCoverage.xml'
-$config.codecoverage.OutputFormat = 'CoverageGutters'
-$config.CodeCoverage.Path = './Public/*.ps1'
+$config.TestResult = @{
+    Enabled = $true
+    OutputPath = './TestResults.xml'
+}
+$config.CodeCoverage = @{
+    Enabled = $true
+    OutputPath = './CodeCoverage.xml'
+    OutputFormat = 'CoverageGutters'
+    Path = './Public/*.ps1'
+}
 
 Invoke-Pester -Configuration $config
 
