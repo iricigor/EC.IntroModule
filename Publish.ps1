@@ -1,19 +1,15 @@
 [CmdletBinding()]param()
-# only publish if commit message starts with !publish
-# if ($Env:APPVEYOR_REPO_COMMIT_MESSAGE -notmatch ', publish!$') {
-#     Write-Output "No publishing from AppVeyor, to automatically publish, finish commit message with ', publish!'"
-#     exit
-# }
 
 if ($env:OS -notmatch 'Windows') {
     Write-Output 'Publishing possible only from Windows hosts'
     exit
 }
 
-# check if this version already exists
 $ModuleName = 'EC.IntroModule'
+
+# check if this version already exists
 Write-Verbose "Checking local module $ModuleName manifest"
-$Manifest = Test-ModuleManifest -Path (Join-Path . "$ModuleName.psd1") -Verbose:$false
+$Manifest = Test-ModuleManifest -Path (Join-Path (Split-Path -Parent $PSScriptRoot) "$ModuleName.psd1") -Verbose:$false
 $LocalVersion = $Manifest.Version.ToString()
 Write-Verbose "  ...local module manifest version $LocalVersion found"
 
