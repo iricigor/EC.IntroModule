@@ -9,7 +9,9 @@ $ModuleName = 'EC.IntroModule'
 
 # check if this version already exists
 Write-Verbose "Checking local module $ModuleName manifest"
-$Manifest = Test-ModuleManifest -Path (Join-Path (Split-Path -Parent $PSScriptRoot) "$ModuleName.psd1") -Verbose:$false
+$ManifestFile = Join-Path $PSScriptRoot "$ModuleName.psd1"
+Write-Verbose "  ..FileName $ManifestFile"
+$Manifest = Test-ModuleManifest -Path $ManifestFile -Verbose:$false -ea Stop
 $LocalVersion = $Manifest.Version.ToString()
 Write-Verbose "  ...local module manifest version $LocalVersion found"
 
