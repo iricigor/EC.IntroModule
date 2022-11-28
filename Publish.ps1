@@ -33,7 +33,7 @@ if ($LocalVersion -eq $RemoteVersion) {
 # prepare publishing environment
 
 $dir1 = Join-Path $PSScriptRoot $ModuleName
-$dir2 = Join-Path $ModuleName 'Public'
+$dir2 = Join-Path $dir1 'Public'
 New-Item $dir1, $dir2 -ItemType Directory
 Copy-Item "$ModuleName.ps*1" $dir1 # copy psd1, psm1 to target directory
 Copy-Item Public/*.ps1 $dir2
