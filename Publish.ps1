@@ -30,6 +30,20 @@ if ($LocalVersion -eq $RemoteVersion) {
     exit
 }
 
+# prepare publishing environment
+
+$dir1 = Join-Path $PSScriptRoot $ModuleName
+$dir2 = Join-Path $ModuleName 'Public'
+New-Item $dir1, $dir2 -ItemType Directory
+Copy-Item "$ModuleName.ps*1" $dir1 # copy psd1, psm1 to target directory
+Copy-Item Public/*.ps1 $dir2
+$CopiedFiles = Get-ChildItem $dir1 -Recurse -File
+if ($CopiedFiles.Count -ne 4) {
+    $CopiedFiles
+    Write-Error "There is an issue with copied files, we expected exactly 4" -ea Stop
+}
+
+
 # we proceed with publish
 if (!$Env:MyPSGalleryAPIKey) {
     Write-Warning 'MyPSGalleryAPIKey environment variable is not set. Publishing is not possible.'
@@ -37,7 +51,7 @@ if (!$Env:MyPSGalleryAPIKey) {
 } else {
     Write-Output "Publishing version $LocalVersion to PSGallery, currently published version is $RemoteVersion..."
     try {
-        Publish-Module -Path $PSScriptRoot -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
+        Publish-Module -Path $dir1 -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
         Write-Output "Module successfully published!"
     } catch {
         Write-Output "Publishing failed: $_"
