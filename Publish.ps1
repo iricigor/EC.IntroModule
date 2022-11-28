@@ -49,7 +49,7 @@ if (!$Env:MyPSGalleryAPIKey) {
 } else {
     Write-Output "Publishing version $LocalVersion to PSGallery, currently published version is $RemoteVersion..."
     try {
-        Publish-Module -Path $dir1 -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
+        Publish-Module -Path (Join-Path $PSScriptRoot 'src') -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
         Write-Output "Module successfully published!"
     } catch {
         Write-Output "Publishing failed: $_"
