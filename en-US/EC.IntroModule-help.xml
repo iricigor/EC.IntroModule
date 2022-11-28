@@ -6,11 +6,11 @@
       <command:verb>Get</command:verb>
       <command:noun>Cube</command:noun>
       <maml:description>
-        <maml:para>SE-UP example commandlet</maml:para>
+        <maml:para>Enterprise Cloud example commandlet</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>SE-UP example commandlet that returns cube of a given number.</maml:para>
+      <maml:para>Enterprise Cloud example commandlet that returns cube of a given number.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -74,11 +74,11 @@
       <command:verb>Get</command:verb>
       <command:noun>Square</command:noun>
       <maml:description>
-        <maml:para>SE-UP example commandlet</maml:para>
+        <maml:para>Enterprise Cloud example commandlet</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>SE-UP example commandlet that returns square of given number(s)</maml:para>
+      <maml:para>Enterprise Cloud example commandlet that returns square of given number(s)</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>

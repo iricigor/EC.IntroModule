@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-Cube
 
 ## SYNOPSIS
-SE-UP example commandlet
+Enterprise Cloud example commandlet
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-Cube [-Number] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-SE-UP example commandlet that returns cube of a given number.
+Enterprise Cloud example commandlet that returns cube of a given number.
 
 ## EXAMPLES
 

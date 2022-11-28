@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-Square
 
 ## SYNOPSIS
-SE-UP example commandlet
+Enterprise Cloud example commandlet
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-Square [-Number] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-SE-UP example commandlet that returns square of given number(s)
+Enterprise Cloud example commandlet that returns square of given number(s)
 
 ## EXAMPLES
 
