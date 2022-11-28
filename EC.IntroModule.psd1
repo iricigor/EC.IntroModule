@@ -12,7 +12,7 @@
 RootModule = './EC.IntroModule.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.2'
+ModuleVersion = '1.0.3'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop','Core')
@@ -95,7 +95,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('Windows', 'Linux', 'MacOS')
 
         # A URL to the license for this module.
         # LicenseUri = ''
