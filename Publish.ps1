@@ -32,10 +32,10 @@ if ($LocalVersion -eq $RemoteVersion) {
 
 # prepare publishing environment
 Push-Location $PSScriptRoot
-New-Item 'src','src/Public','src/en-US' -ItemType Directory | Out-Null
+New-Item $ModuleName,"$ModuleName/Public","$ModuleName/en-US" -ItemType Directory | Out-Null
 $a = ('EC.IntroModule.psd1','EC.IntroModule.psm1','Public/Get-Cube.ps1','Public/Get-Square.ps1','en-US\EC.IntroModule-help.xml')
-$a | ForEach-Object {Copy-Item $_ -Destination (Join-Path 'src' $_)}
-$CopiedFiles = Get-ChildItem 'src' -Recurse -File
+$a | ForEach-Object {Copy-Item $_ -Destination (Join-Path $ModuleName $_)}
+$CopiedFiles = Get-ChildItem $ModuleName -Recurse -File
 if ($CopiedFiles.Count -ne 5) {
     $CopiedFiles
     Write-Error "There is an issue with copied files, we expected exactly 5, but we have $($CopiedFiles.Count)" -ea Stop
@@ -49,7 +49,7 @@ if (!$Env:MyPSGalleryAPIKey) {
 } else {
     Write-Output "Publishing version $LocalVersion to PSGallery, currently published version is $RemoteVersion..."
     try {
-        Publish-Module -Path (Join-Path $PSScriptRoot 'src') -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
+        Publish-Module -Path (Join-Path $PSScriptRoot $ModuleName) -Repository PSGallery -NuGetApiKey $env:MyPSGalleryAPIKey -ea Stop -Verbose
         Write-Output "Module successfully published!"
     } catch {
         Write-Output "Publishing failed: $_"
