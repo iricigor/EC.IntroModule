@@ -35,14 +35,14 @@ if ($LocalVersion -eq $RemoteVersion) {
 $dir1 = Join-Path $PSScriptRoot $ModuleName
 $dir2 = Join-Path $dir1 'Public'
 New-Item $dir1, $dir2 -ItemType Directory | Out-Null
-Push-Location $dir1
+Push-Location $PSScriptRoot
 Copy-Item "$ModuleName.ps*1" $dir1 # copy psd1, psm1 to target directory
 Copy-Item Public/*.ps1 $dir2
 Pop-Location
 $CopiedFiles = Get-ChildItem $dir1 -Recurse -File
 if ($CopiedFiles.Count -ne 4) {
     $CopiedFiles
-    Write-Error "There is an issue with copied files, we expected exactly 4" -ea Stop
+    Write-Error "There is an issue with copied files, we expected exactly 4, but we have $($CopiedFiles.Count)" -ea Stop
 }
 
 
