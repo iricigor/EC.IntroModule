@@ -1,4 +1,4 @@
-$module = Get-Module -Name Pester -ListAvailable | Where-Object Version -ge 5.0.0
+$module = Get-Module -Name Pester -ListAvailable | Where-Object Version -ge 5.0.0 | Sort-Object Version -Descending | Select-Object -First 1
 
 if ($module) {
     Write-Host "Pester module found. Importing Pester module..."
