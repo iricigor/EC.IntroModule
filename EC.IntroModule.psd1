@@ -12,7 +12,7 @@
 RootModule = './EC.IntroModule.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.4'
+ModuleVersion = '1.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop','Core')
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'initial release'
+        ReleaseNotes = 'support decimal'
 
     } # End of PSData hashtable
 

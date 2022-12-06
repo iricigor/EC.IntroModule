@@ -50,3 +50,9 @@ Describe "Proper $CommandName Functionality" {
         3,4 | Get-Cube | Should -Be @(27,64)
     }
 }
+
+Describe "$CommandName accept decimal" {
+    It 'Calculates properly decimal' {
+        Get-Cube 2.5 | Should -Be 15.625
+    }
+}

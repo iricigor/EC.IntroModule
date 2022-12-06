@@ -13,7 +13,7 @@ Enterprise Cloud example commandlet
 ## SYNTAX
 
 ```
-Get-Cube [-Number] <Int32[]> [<CommonParameters>]
+Get-Cube [-Number] <Decimal[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +41,7 @@ Returns cubes of numbers passed via pipeline
 Input number(s)
 
 ```yaml
-Type: Int32[]
+Type: Decimal[]
 Parameter Sets: (All)
 Aliases:
 

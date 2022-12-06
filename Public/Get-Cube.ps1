@@ -2,7 +2,7 @@ function Get-Cube {
 
     param (
         [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
-        [int[]]$Number
+        [decimal[]]$Number
     )
 
     BEGIN {

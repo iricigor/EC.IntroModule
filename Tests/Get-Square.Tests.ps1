@@ -52,3 +52,10 @@ Describe "Proper $CommandName Functionality" {
     }
 
 }
+
+
+Describe "$CommandName accept decimal" {
+    It 'Calculates properly decimal' {
+        Get-Square 2.5 | Should -Be 6.25
+    }
+}
